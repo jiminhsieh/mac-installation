@@ -4,7 +4,7 @@ set -e
 
 main() {
   local dev="${1:-yes}"
-  local cli_tools=(jq q git gh tmux fish glances thefuck wget curl)
+  local cli_tools=(jq q git gh tmux glances thefuck wget curl)
   local casks=(brave-origin 1password iina ghostty spotify chatgpt discord firefox keka)
 
   [[ "$dev" == yes || "$dev" == no ]] || {
@@ -26,3 +26,6 @@ main() {
 
 main "$@"
 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+brew install zsh-autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
